@@ -2,7 +2,7 @@ var SIZE = 3; //vmin
 var GREENERY = '#056949';
 var lists = [].slice.call(document.querySelectorAll('ul'));
 
-// document.documentElement.classList.add('hexagon');
+document.documentElement.classList.add('hexagon');
 
 lists.forEach(function(list, u) {
   var items = list.querySelectorAll('li');
@@ -11,9 +11,9 @@ lists.forEach(function(list, u) {
   for (var i = 0; i < length; ++i) {
     items[i].style.transform = 'rotate(' + (i / length) + 'turn) ' + translate;
     var rando = Math.random();
-    // if (rando < .096) {
-    //   items[i].classList.add('berry');
-    // }
+    if (rando < .096) {
+      items[i].classList.add('berry');
+    }
     if (rando > .45 && rando < .6) {
       items[i].classList.add('light');
     }
@@ -61,11 +61,11 @@ if (document.documentElement.animate) {
   startSparkle();
 }
 
-document.body.addEventListener('click', function(e) {
-  var cl =document.documentElement.classList;
-  if (cl.contains('hexagon')) {
-    cl.remove('hexagon');
-  } else {
-    cl.add('hexagon');
-  }
-})
+// document.body.addEventListener('click', function(e) {
+//   var cl =document.documentElement.classList;
+//   if (cl.contains('hexagon')) {
+//     cl.remove('hexagon');
+//   } else {
+//     cl.add('hexagon');
+//   }
+// })
